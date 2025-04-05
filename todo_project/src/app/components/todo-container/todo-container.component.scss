@@ -1,0 +1,59 @@
+$input-color: #e5e5e5;
+$input-ph-color: #717277;
+$icon-bg: #5fc23c;
+$icon-bg-hover: #5eda31;
+
+
+.todo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray;
+  border-radius: 15px;
+  width: 550px;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 20px 5px;
+
+  &-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    position: relative;
+
+    & input{
+      padding: 15px 20px;
+      font-size: 1.2rem;
+      width: 100%;
+      border-radius: 30px 30px 30px 30px;
+      outline: none;
+      border: none;
+      background-color: $input-color;
+      color: $input-ph-color;
+    }
+    & i {
+      display: flex ;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.8rem;
+      border-radius: 50%;
+      background-color: $icon-bg;
+      padding: 10px;
+      position: absolute;
+      right: 0;
+      cursor: pointer;
+    }
+
+    & i:hover {
+      background-color: $icon-bg-hover;
+    }
+  }
+
+}

@@ -1,0 +1,13 @@
+$h_primary: #a1d3d3;
+
+header{
+  background-color: $h_primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+  h1 {
+    color: #353a3a;
+  }
+}
