@@ -1,1 +1,14 @@
-<p>todo-item works!</p>
+<div class="todo-item-container" id="todo_{{ todo().id }}">
+  <div class="todo-item-title" (click)="tickItem()">
+    <p appHighlightCompleted [isCompleted]="todo().isCompleted">{{ todo().title }}</p>
+  </div>
+
+
+  <div class="icons">
+    @if (!todo().isCompleted){
+      <i class="fa-solid fa-pen"></i>
+    }
+    <i class="fa-solid fa-trash" (click)="deleteItem()"></i>
+  </div>
+
+</div>

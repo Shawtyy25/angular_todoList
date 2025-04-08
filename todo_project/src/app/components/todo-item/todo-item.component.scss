@@ -1,0 +1,34 @@
+$todoBg: #e5e5e5;
+$deleteBg: #838080;
+$penBg: #010302;
+
+.todo-item-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 1rem;
+  background-color: $todoBg;
+  border-radius: 10px;
+  width: 100%;
+
+  & .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    & .fa-trash{
+      cursor: pointer;
+      color: $deleteBg;
+    }
+    & .fa-pen{
+      cursor: pointer;
+      color: $penBg;
+    }
+  }
+}
+
+.todo-item-title {
+  width: 100%;
+  cursor: pointer;
+}

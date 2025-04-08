@@ -3,11 +3,15 @@
     <h2>ToDo list</h2>
   </div>
   <div class="todo-input">
-    <input type="text" placeholder="Add your task" #newTask>
+    <input type="text" placeholder="Add your task" #newTask (change)="addNewTask(newTask)">
     <i class="fa-solid fa-plus" (click)="addNewTask(newTask)"></i>
   </div>
   <div class="todo-items">
-
+    @for (todo of todoList(); track $index) {
+      <app-todo-item [todo]="todo" (todo_deleted)="deleteTodo(todo)" (todo_toggled)="tickTodo(todo)" />
+    }
   </div>
+
+
 
 </div>

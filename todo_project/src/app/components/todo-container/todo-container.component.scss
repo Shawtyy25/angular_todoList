@@ -1,6 +1,6 @@
 $input-color: #e5e5e5;
 $input-ph-color: #717277;
-$icon-bg: #5fc23c;
+$icon-bg: #63e734;
 $icon-bg-hover: #5eda31;
 
 
@@ -13,7 +13,7 @@ $icon-bg-hover: #5eda31;
   width: 550px;
   flex-direction: column;
   gap: 1.5rem;
-  padding: 20px 5px;
+  padding: 50px 5px;
 
   &-header{
     display: flex;
@@ -45,7 +45,7 @@ $icon-bg-hover: #5eda31;
       font-size: 1.8rem;
       border-radius: 50%;
       background-color: $icon-bg;
-      padding: 10px;
+      padding: 12px;
       position: absolute;
       right: 0;
       cursor: pointer;
@@ -56,4 +56,11 @@ $icon-bg-hover: #5eda31;
     }
   }
 
+}
+
+.todo-items {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
