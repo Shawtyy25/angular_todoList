@@ -1,0 +1,33 @@
+
+<div class="popup-window">
+    <div class="popup-header">
+      <h1>Edit ToDo</h1>
+    </div>
+    <div class="popup-body">
+      <label for="{{ todo().id }}_title">Title</label>
+      <input
+        type="text"
+        [value]="todo().title"
+        id="{{ todo().id }}_title"
+        required #title
+      >
+
+      <label for="{{ todo().id }}_description">Description</label>
+      <input
+        type="text"
+        id="{{ todo().id }}_description"
+        [value]="todo().description ? todo().description : ''"
+        placeholder="Description"
+        #desc
+      >
+
+      <label for="{{ todo().id }}_id">ID</label>
+      <input id="{{ todo().id }}_id" type="text" [value]="todo().id" disabled #id>
+    </div>
+
+    <div class="popup-buttons">
+      <button class="save" (click)="saveEdits(title.value, desc.value)">Save</button>
+      <button class="close" (click)="closePopup()">Close</button>
+    </div>
+</div>
+

@@ -1,3 +1,5 @@
+
+
 <div class="todo">
   <div class="todo-header">
     <h2>ToDo list</h2>
@@ -8,7 +10,13 @@
   </div>
   <div class="todo-items">
     @for (todo of todoList(); track $index) {
-      <app-todo-item [todo]="todo" (todo_deleted)="deleteTodo(todo)" (todo_toggled)="tickTodo(todo)" />
+      <app-todo-item
+        [todo]="todo"
+        (todo_deleted)="deleteTodo(todo)"
+        (todo_toggled)="tickTodo(todo)"
+        (todo_edited)="updateTodo($event)"
+      />
+
     }
   </div>
 

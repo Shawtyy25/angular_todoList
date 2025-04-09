@@ -1,15 +1,15 @@
-import {Component, signal, WritableSignal} from '@angular/core';
+import {Component, signal} from '@angular/core';
 import {Todo} from '../../model/todo-type';
 import {FormsModule} from '@angular/forms';
 import {TodoItemComponent} from '../todo-item/todo-item.component';
-import {isLocalCompilationDiagnostics} from '@angular/compiler-cli';
+import {EditPopupComponent} from "../edit-popup/edit-popup.component";
 
 @Component({
   selector: 'app-todo-container',
-  imports: [
-    FormsModule,
-    TodoItemComponent
-  ],
+    imports: [
+        FormsModule,
+        TodoItemComponent,
+    ],
   templateUrl: './todo-container.component.html',
   styleUrl: './todo-container.component.scss'
 })
@@ -24,7 +24,13 @@ export class TodoContainerComponent {
 
 
       if (value) {
-        const newTodoItem: Todo = {title: value, id: this.currentId, isCompleted: false};
+        const newTodoItem: Todo = {
+          title: value,
+          id: this.currentId,
+          isCompleted: false,
+          modalState: false,
+
+        };
         this.todoList.set([...this.todoList(), newTodoItem]);
         this.currentId++;
       }
@@ -51,6 +57,16 @@ export class TodoContainerComponent {
       })
     )
 
+  }
+
+  updateTodo(editedTodo: Todo): void {
+    this.todoList.set(
+      this.todoList().map((todo: Todo) => {
+        return todo.id === editedTodo.id
+        ? { ...editedTodo }
+        : { ...todo };
+      })
+    );
   }
 
 }

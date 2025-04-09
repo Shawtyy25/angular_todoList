@@ -1,6 +1,7 @@
 $todoBg: #e5e5e5;
 $deleteBg: #838080;
 $penBg: #010302;
+$popupBg: rgb(194, 194, 194);
 
 .todo-item-container{
   display: flex;
@@ -31,4 +32,13 @@ $penBg: #010302;
 .todo-item-title {
   width: 100%;
   cursor: pointer;
+}
+
+.popup {
+  position: absolute;
+  background-color: $popupBg;
+  border-radius: 0 0 15px 15px;
+  padding: 10px;
+  width: 25rem;
+  margin-top: -5px;
 }
